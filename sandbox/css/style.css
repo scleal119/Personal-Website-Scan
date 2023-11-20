@@ -1,0 +1,11 @@
+h1 {text-align: center;
+    color: forestgreen;
+    font-family: Arial, Helvetica, sans-serif; }
+h2 {text-align: center;
+font-family: Arial, Helvetica, sans-serif;}
+body {
+    background-image: url("images/paper.png"); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; ;
+}

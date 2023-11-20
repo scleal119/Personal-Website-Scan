@@ -1,0 +1,45 @@
+/*reviews container css*/
+
+
+/*with this container, i am able to control where i want the images and columns within it*/
+.container{
+    display: flex;
+    align-items: center;
+}
+
+/*holds the image of each book and spaces them*/
+.image-column{
+    margin-right: 20px;
+    padding: 20px;
+    position: relative;
+}
+.hover-text{
+    position: absolute;
+    top:85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color:black;
+    display: none;
+    
+}
+
+/*space for book reviews and aligns the relative to the images*/
+.review-column{
+    text-align: left;
+    flex: 2;
+}
+
+.image-column img {
+    width:100%;
+    transition: transform 0.3s ease;
+}
+
+.image-column img:hover{
+    transform: scale(1.5);
+}
+
+.image-column:hover .hover-text{
+    display:flex;
+    opacity: 1;
+}

@@ -1,0 +1,12 @@
+/*wishlist image css*/
+
+/*rounds out the image of snoopy*/
+img { display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+/*aligns the image in the center of the page*/
+.img-container {
+    text-align: center;
+}
