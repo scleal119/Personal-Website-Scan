@@ -1,0 +1,65 @@
+What's highlighted is security measures that I have implemented throughout the process so far  
+
+11/15/2023 
+
+Created a website using apache and html  
+
+Sudo apt update 
+
+Sudo apt upgrade 
+
+Sudo apt install apache2 
+
+Opened web browser and found default apache page 
+
+Replace default page with website index using nano /var/www/html/index.html 
+
+Save changes and change permissions so the files can only be read 
+
+Sudo chown –R www-data:www-data /var/www/html 
+
+Sudo nano /etc/ssh/sshd_config: changed listening port to port 80 
+
+Restart ssh 
+
+Configure firewall to allow traffic to port 80 using sudo ufw allow 80/tcp (install uwf if not already installed using sudo apt-get ufw) 
+
+Sudo ufw allow 443/tcp (HTTPS) 
+
+Test website by searching the raspberry pi ip address on a web browser 
+
+Ran into a few problems with apache, nothing a reboot and upgrade couldn’t fix  
+
+11/16/2023 
+
+Create and register domain name 
+
+Register domain name snoopyreads.com at GoDaddy.com 
+
+Forward domain name to ip address (172.20.10.10) 
+
+Configure apache to allow files to be accessed by snoopyreads.com using  
+
+sudo nano /etc/apache2/sites-available/000-default.cof 
+
+Added <Directory "/path/to/your/document/root/.well-known/acme-challenge/"> AllowOverride None Require all granted </Directory> to the text file and saved 
+
+Sudo apt install certbot python3-certbot-apache to install what we will use to get an SSL/TLS certificate for our domain name. This uses HTTPS.  
+
+Sudo certbot – -apache : creates the certificate 
+
+System logs to check regularly:  
+
+/var/log/apache2/access.log and /var/log/apache2/error.log. 
+
+ 
+
+Fail2ban blocks IP addresses that repeatedly fail authentication (there is no authentication on our website but it’s still good to have “in case of future progression”) 
+
+sudo apt install fail2ban 
+
+sudo systemctl enable fail2ban 
+
+sudo systemctl start fail2ban 
+
+  
