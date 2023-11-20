@@ -1,0 +1,38 @@
+/*navigation bar*/
+
+/*style elements of the navigation bar*/
+ul.navbar {
+    list-style-type: none;
+    background-color: transparent; 
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+ul.navbar li {
+    display:inline-block;
+    margin-right: 20px;
+}
+ul.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    color: forestgreen;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+/*creates a margin for the text in reference to the previous style*/
+ul.navbar li:last-child{
+    margin-right:0;
+}
+
+/*creates a hover effect over each tab on the navbar*/
+ul.navbar li a:hover {
+    background-color: forestgreen; 
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif ;
+    border-radius: 50%;
+}
